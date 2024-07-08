@@ -1,4 +1,4 @@
-# 0 环境配置
+# 1 环境配置
 
 ~~~python
 # 1 删除编译的中间文件
@@ -10,7 +10,7 @@
 
 
 
-# 1 关节角度joint_state控制
+# 2 关节角度joint_state控制
 ~~~python
 # 1 第一次开启启动都需要can使能, 运行下面脚本，如果重启电脑，还需要运行该脚本
 ./tools/can.sh
@@ -26,7 +26,7 @@
 ~~~
 
 
-# 2 末端姿态tip pose控制
+# 3 末端姿态tip pose控制
 
 ~~~python
 # 1 第一次开启启动都需要can使能, 运行下面脚本，如果重启电脑，还需要运行该脚本
@@ -42,7 +42,7 @@
 请参考./tools/pos_remote.sh与./tools/pos_puppet.sh脚本自行修改
 ~~~
 
-# 3 ros消息类型说明
+# 4 ros消息类型说明
 
 1. 关节角度joint_state
 `JointControl.msg`与`JointInformation.msg`
@@ -56,6 +56,7 @@ int32 mode
 2. Tip Pose
 
 `PosCmd.msg`
++ 以零位姿态link6为固定坐标系原点
 ~~~python
 # xyz单位m, rpy单位rad，gripper(取值0-5, 映射到0-85mm)
 float64 x                  
@@ -71,6 +72,7 @@ int32 mode2
 
 3. 坐标系示意图
 
++ 以零位姿态link6为固定坐标系原点
 + 零位示意图
 <p align="center">
   <img src="./tools/3.jpg" width="480" height="360" />
