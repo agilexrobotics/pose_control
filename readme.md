@@ -223,7 +223,7 @@ if __name__ == "__main__":
     rospy.spin()   
 ~~~
 
-# 4.2 发布消息
+## 4.2 发布消息
 
 1. 发布`sensor_msgs::JointState`类型：右主臂关节状态`/master/joint_right`,
 ~~~python
