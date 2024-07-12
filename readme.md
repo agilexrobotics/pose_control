@@ -2,7 +2,7 @@
 
 ~~~python
 # 1 进入该目录
-cd remote_control_pos
+cd pose_control
 
 # 2 删除编译的中间文件
 ./tools/delete_build_file.sh
@@ -129,7 +129,7 @@ pose:
 ## 3.1 joint_state控制
 
 ~~~python
-# 以下脚本在remote_control_pos目录下进行
+# 以下脚本在pose_control目录下进行
 
 # 1 第一次开启启动都需要can使能, 运行下面脚本，如果重启电脑，还需要运行该脚本
 ./tools/can.sh
