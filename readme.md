@@ -148,7 +148,7 @@ pose:
 
 
 ~~~python
-# 以下脚本在remote_control_pos目录下进行
+# 以下脚本在pose_control目录下进行
 
 # 1 第一次开启启动都需要can使能, 运行下面脚本，如果重启电脑，还需要运行该脚本
 ./tools/can.sh
@@ -162,6 +162,27 @@ pose:
 # 4 启动任意臂
 请参考./tools/pos_remote.sh与./tools/pos_puppet.sh脚本自行修改
 ~~~
+
+## 3.3 控制从臂操作
+
+~~~python
+# 1 启动从臂
+./tools/pos_puppet.sh
+
+# 2 发布end_pose消息控制右从臂
+rostopic pub /puppet/end_right geometry_msgs/PoseStamped + tab键
+# tab键会自动补全，如下图所示
+# 注意安全！注意安全！注意安全！
+~~~
+
++ 注意这是测试：x给的0.05表示x方向前进0.05m，w给3表示张开夹爪到3位置。
++ 采用这种方式控制机械臂一定要注意安全，xyz不要给太大，建议小于0.05m, 因为是瞬时到达末端姿态。
++ **给的xyz值大于0.05m出了安全事故，后果自负**，**旋转给0测试**，这里只是为了验证，是否支持末端控制，
++ 建议采用**给定末端姿态后进行插值处理**，然后采用第4节的方式发布ros消息, 进行控制机械臂。
++ **注意安全！注意安全！注意安全！**
+
+![](./doc/5.png)
+
 
 
 # 4 订阅与发布消息代码样例
@@ -223,7 +244,7 @@ if __name__ == "__main__":
     rospy.spin()   
 ~~~
 
-## 4.2 发布消息
+# 4.2 发布消息
 
 1. 发布`sensor_msgs::JointState`类型：右主臂关节状态`/master/joint_right`,
 ~~~python
