@@ -170,7 +170,7 @@ pose:
 ./tools/pos_puppet.sh
 
 # 2 发布end_pose消息控制右从臂
-rostopic pub /puppet/end_right geometry_msgs/PoseStamped + tab键
+rostopic pub /master/end_right geometry_msgs/PoseStamped + tab键
 # tab键会自动补全，如下图所示
 # 注意安全！注意安全！注意安全！
 ~~~
