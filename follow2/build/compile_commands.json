@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/lin/test/ARX_L5_SDK/follow2/build/arm_control",
-  "command": "/usr/bin/c++  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"arm_control\\\" -I/home/lin/test/ARX_L5_SDK/follow2/devel/include -I/home/lin/test/ARX_L5_SDK/follow2/src/arm_control/include -I/opt/ros/noetic/include -I/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp    -w -std=c++11 -o CMakeFiles/arm_node4.dir/src/arx.cpp.o -c /home/lin/test/ARX_L5_SDK/follow2/src/arm_control/src/arx.cpp",
-  "file": "/home/lin/test/ARX_L5_SDK/follow2/src/arm_control/src/arx.cpp"
-}
-]
