@@ -117,12 +117,12 @@ int main(int argc, char **argv)
 
         geometry_msgs::PoseStamped msg_pos_back;
         msg_pos_back.header.stamp = msg_joint.header.stamp;
-        msg_pos_back.pose.position.x      =ARX_ARM.solve.End_Effector_Pose[0];
-        msg_pos_back.pose.position.y      =ARX_ARM.solve.End_Effector_Pose[1];
-        msg_pos_back.pose.position.z      =ARX_ARM.solve.End_Effector_Pose[2];
-        msg_pos_back.pose.orientation.x   =ARX_ARM.solve.End_Effector_Pose[3];
-        msg_pos_back.pose.orientation.y   =ARX_ARM.solve.End_Effector_Pose[4];
-        msg_pos_back.pose.orientation.z   =ARX_ARM.solve.End_Effector_Pose[5];
+        msg_pos_back.pose.position.x      =ARX_ARM.fk_end_pos[0];
+        msg_pos_back.pose.position.y      =ARX_ARM.fk_end_pos[1];
+        msg_pos_back.pose.position.z      =ARX_ARM.fk_end_pos[2];
+        msg_pos_back.pose.orientation.x   =ARX_ARM.fk_end_pos[3];
+        msg_pos_back.pose.orientation.y   =ARX_ARM.fk_end_pos[4];
+        msg_pos_back.pose.orientation.z   =ARX_ARM.fk_end_pos[5];
         msg_pos_back.pose.orientation.w   =ARX_ARM.current_pos[6] * 5;
         pub_pos.publish(msg_pos_back);
 
