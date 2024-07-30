@@ -1,0 +1,2 @@
+arm_control
+-DCATKIN_DEVEL_PREFIX=/home/lin/test/ARX_L5_SDK/pos_follow2/devel -DCMAKE_INSTALL_PREFIX=/home/lin/test/ARX_L5_SDK/pos_follow2/install -G Unix Makefiles
