@@ -103,14 +103,15 @@
 # 5 ros消息类型说明
 
 ## 5.1 关节角度joint_state
-`JointControl.msg`与`JointInformation.msg`
++ joint state以零位状态为0°开始计算角度
+
 ~~~python
 # 1 joint_state关节角度： sensor_msgs::JointState
 std_msgs/Header header
   uint32 seq
   time stamp              # 时间戳
   string frame_id        
-string[] name             # 关节名字
+string[] name             # 关节名称
 float64[] position        # 角度 0-5维为每个关节的角度(rad)，第6维为gripper(注意夹爪 0-5rad 对应 0-80mm)
 float64[] velocity        # 关节速度 rad/s
 float64[] effort          # 关节扭矩 n·m
@@ -118,7 +119,6 @@ float64[] effort          # 关节扭矩 n·m
 
 ## 5.2 Tip Pose
 
-`PosCmd.msg`
 + 以零位姿态link6为固定坐标系原点
 
 <p align="center">
@@ -127,16 +127,6 @@ float64[] effort          # 关节扭矩 n·m
 
 
 ~~~python
-# xyz单位m, rpy单位rad，gripper(取值0-5, 映射到0-80mm)
-float64 x                  
-float64 y
-float64 z
-float64 roll
-float64 pitch
-float64 yaw
-float64 gripper   # gripper(取值0-5rad, 映射到0-80mm)  
-int32 mode1
-int32 mode2
 # xyz单位m, 旋转orientation部分xyz单位rad，gripper(取值0-5, 映射到0-80mm)
 std_msgs/Header header
   uint32 seq
