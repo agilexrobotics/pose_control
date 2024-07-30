@@ -83,7 +83,7 @@ int main(int argc, char **argv)
                                     for(int8_t i = 0; i < 7; ++i)
                                     {
                                     ARX_ARM.ros_control_pos_t[i] = msg->position[i];
-                                    ARX_ARM.ros_control_spd_t[i] = msg->velocity[i];
+                                    // ARX_ARM.ros_control_spd_t[i] = msg->velocity[i];
                                     }
                                 });
     ros::Subscriber sub_pos = node.subscribe<geometry_msgs::PoseStamped>("/master/end_right", 10, 
